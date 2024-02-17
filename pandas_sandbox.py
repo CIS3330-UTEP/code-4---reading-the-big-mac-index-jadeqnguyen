@@ -33,7 +33,23 @@ df = pd.read_csv("big-mac-full-index.csv")
 
 # print(type(df["name"]))
 
-print((df["iso_a3"]))
+# print((df["iso_a3"]))
 
-print(type(df["iso_a3"]))
+# print(type(df["iso_a3"]))
+
+country_code = ["USA"]
+query_text = f"iso_a3 == @country_code"
+
+df_usa = df.query(query_text)
+
+# print(round(df_usa["local_price"]))
+# print(df.median())
+
+print(df_usa)
+
+idx_dollar_price = df_usa["dollar_price"].idxmax()
+
+print(idx_dollar_price)
+
+usa_series = df_usa.loc[idx_dollar_price]
 
