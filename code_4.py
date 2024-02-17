@@ -19,4 +19,11 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     print(df["dollar.price"].max())
 
 if __name__ == "__main__":
-    pass # Remove this line and code your user interface
+    result_a = get_big_mac_price_by_year(2010,"arg")
+    print(result_a)
+    result_b = get_big_mac_price_by_country("mex")
+    print(result_b)
+    result_c = get_the_cheapest_big_mac_price_by_year(2008)
+    print()
+    result_d = get_the_most_expensive_big_mac_price_by_year(2014)
+    print(result_d)
