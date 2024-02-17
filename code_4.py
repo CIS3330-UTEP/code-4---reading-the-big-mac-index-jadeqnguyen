@@ -6,7 +6,10 @@ def get_big_mac_price_by_year(year,country_code):
     #filter data first
     year = "date"
     country_code = "iso_a3"
+    
     query_text = f"iso_a3 == @county_code"
+    df_country_code = df.query(query_text)
+
     print(round(df["dollar_price"].mean(),2))
 
 def get_big_mac_price_by_country(country_code):
