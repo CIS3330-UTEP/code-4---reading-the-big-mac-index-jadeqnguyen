@@ -18,13 +18,13 @@ def get_big_mac_price_by_country(country_code):
 
 def get_the_cheapest_big_mac_price_by_year(year):
     filt_df = df.loc[df["year"] == year]
-    min_price_country = df.loc[filt_df["dollar_price"].idxmin()]
+    min_price_country = filt_df.loc[filt_df["dollar_price"].idxmin()]
     
     country_name = min_price_country["name"]
     country_code = min_price_country["iso_a3"]
     minimum_price = min_price_country["dollar_price"]
     
-    return 
+    return f"{country_name}({country_code}): ${round(minimum_price, 2)}"
 
 def get_the_most_expensive_big_mac_price_by_year(year):
     filt_df = df.loc[df["year"] == year]
