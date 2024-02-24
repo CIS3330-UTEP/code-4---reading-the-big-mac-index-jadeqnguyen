@@ -5,14 +5,12 @@ df = pd.read_csv(filename)
 
 def get_big_mac_price_by_year(year,country_code):
     #filter data first 
-    year = 2000
     query_text = f"(date >= '{year}-01-01' and (date <= '{year}-12-31') and (iso_a3 == '{country_code})'"
     df_year = df.query(query_text)
     
     return round(df_year["dollar_price"].mean(),2)
     
 def get_big_mac_price_by_country(country_code):
-    country_code = "iso_a3"
     query_text = f"iso_a3 == {country_code}"
     df_country_code = df.query(query_text)
     
@@ -31,4 +29,4 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     return df_expensive_year.loc[df_expensive_year['dollar_price'].idxmin()]
 
 
-if __name__ == "__main__":
+    if __name__ == "__main__":
