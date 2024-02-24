@@ -22,21 +22,21 @@ def get_the_cheapest_big_mac_price_by_year(year):
     query_text = f"date == '{year}'"
     df_cheapest_year = df.query(query_text)
     
-    return df_cheapest_year['dollar_price'].idxmax()
+    return df_cheapest_year.loc[df_cheapest_year['dollar_price'].idxmax()]
     
 def get_the_most_expensive_big_mac_price_by_year(year):
-    query_text = f"(date == '{year}')"
+    query_text = f"date == '{year}'"
     df_expensive_year = df.query(query_text)
     
-    return df_expensive_year['dollar_price'].idxmin()
+    return df_expensive_year.loc[df_expensive_year['dollar_price'].idxmin()
 
 
 if __name__ == "__main__":
-    result_a = get_big_mac_price_by_year(2010,"arg")
-    print(result_a)
-    result_b = get_big_mac_price_by_country("mex")
-    print(result_b)
-    result_c = get_the_cheapest_big_mac_price_by_year(2008)
-    print()
-    result_d = get_the_most_expensive_big_mac_price_by_year(2014)
-    print(result_d)
+    # result_a = get_big_mac_price_by_year(2010,"arg")
+    # print(result_a)
+    # result_b = get_big_mac_price_by_country("mex")
+    # print(result_b)
+    # result_c = get_the_cheapest_big_mac_price_by_year(2008)
+    # print()
+    # result_d = get_the_most_expensive_big_mac_price_by_year(2014)
+    # print(result_d)
