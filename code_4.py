@@ -28,5 +28,6 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     
     return df_expensive_year.loc[df_expensive_year['dollar_price'].idxmax()]
 
-
-    if __name__ == "__main__":
+if __name__ == "__main__":
+    result_a = get_big_mac_price_by_year(2000, "USA")
+    print(result_a)
