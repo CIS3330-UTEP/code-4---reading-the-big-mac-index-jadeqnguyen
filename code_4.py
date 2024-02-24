@@ -20,13 +20,13 @@ def get_the_cheapest_big_mac_price_by_year(year):
     query_text = f"date == '{year}'"
     df_cheapest_year = df.query(query_text)
     
-    return df_cheapest_year.loc[df_cheapest_year['dollar_price'].idxmax()]
+    return df_cheapest_year.loc[df_cheapest_year['dollar_price'].idxmin()]
     
 def get_the_most_expensive_big_mac_price_by_year(year):
     query_text = f"date == '{year}'"
     df_expensive_year = df.query(query_text)
     
-    return df_expensive_year.loc[df_expensive_year['dollar_price'].idxmin()]
+    return df_expensive_year.loc[df_expensive_year['dollar_price'].idxmax()]
 
 
     if __name__ == "__main__":
