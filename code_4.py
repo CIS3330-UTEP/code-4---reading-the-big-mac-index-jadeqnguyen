@@ -19,7 +19,7 @@ def get_big_mac_price_by_country(country_code):
     return round(df_country_code["dollar_price"].mean(),2)
     
 def get_the_cheapest_big_mac_price_by_year(year):
-    query_text = f"(date == '{year}')"
+    query_text = f"date == '{year}'"
     df_cheapest_year = df.query(query_text)
     
     return df_cheapest_year['dollar_price'].idxmax()
