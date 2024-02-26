@@ -5,6 +5,7 @@ df = pd.read_csv(filename)
 
 def get_big_mac_price_by_year(year,country_code):
     #filter data first 
+    year = 2000
     query_text = f"(date >= '{year}-01-01' and (date <= '{year}-12-31') and (iso_a3 == '{country_code})'"
     df_year = df.query(query_text)
     
