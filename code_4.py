@@ -31,3 +31,7 @@ def get_the_most_expensive_big_mac_price_by_year(year):
     return df_expensive_year.loc[max_idx]['dollar_price']
 
 if __name__ == "__main__":
+
+    year = 2012
+    country_code = "ARG"
+    
